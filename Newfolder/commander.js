@@ -41,8 +41,21 @@ function processCommand(receivedMessage) {
     } else if (primaryCommand == "apoeightball") {eightBallCommand(receivedMessage)}
 
     else {
-        receivedMessage.channel.send("Enough about " + primaryCommand + "! What about the crucible!?", {
-            files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']})
+        if (receivedMessage == "blade barrage") {
+            receivedMessage.channel.send('Try golden gun next time!', {
+                files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']
+            })
+        }
+        else if (receivedMessage == "nova bomb") {
+            receivedMessage.channel.send('Apo mains Nova Bomb, and he\'s great!', {
+                files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']
+            })
+        }
+        else {
+            receivedMessage.channel.send("Enough about " + primaryCommand + "! What about the crucible!?", {
+                files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']
+            })}
+        
     }
 }
 
@@ -89,7 +102,7 @@ function eightBallCommand(receivedMessage) {
     picker = Math.floor((Math.random() * 6) + 1);
 }
 function aboutCommand(receivedMessage) {
-    receivedMessage.channel.send('Developed by William Hueston. Open Source and available at: https://github.com/wjhueston/DiscordBot/')
+    receivedMessage.channel.send('Developed by William Hueston. Open Source and available at: https://github.com/wjhueston/DiscordBot/blob/master/Newfolder/commander.js')
 }
 
 client.login("NjgxMDI4MTc4Njg4NzM3MzQw.XlIgJA.VmaaHl2lJFM5-J78o-y6L_mJgbk") // Replace XXXXX with your bot token
