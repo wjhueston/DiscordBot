@@ -1,0 +1,9 @@
+{
+  "name": "raid-bot",
+  "version": "0.0.0",
+  "description": "RaidBot",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
