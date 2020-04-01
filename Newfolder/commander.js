@@ -110,4 +110,4 @@ function aboutCommand(receivedMessage) {
     receivedMessage.channel.send('Developed by William Hueston. Open Source and available at: https://github.com/wjhueston/DiscordBot/blob/master/Newfolder/commander.js')
 }
 
-client.login("NjgxMDI4MTc4Njg4NzM3MzQw.XlIgJA.VmaaHl2lJFM5-J78o-y6L_mJgbk") // Replace XXXXX with your bot token
+client.login("NjgxMDI4MTc4Njg4NzM3MzQw.XoQvAg.Y4j2_MHn99vu3HZTIDbAQPvgsaE") // Replace XXXXX with your bot token
