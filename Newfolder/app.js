@@ -6,9 +6,10 @@ client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 })
 
-// Get your bot's secret token from:
-// https://discordapp.com/developers/applications/
-// Click on your application -> Bot -> Token -> "Click to Reveal Token"
-bot_secret_token = "NjgxMDI4MTc4Njg4NzM3MzQw.XoQvAg.Y4j2_MHn99vu3HZTIDbAQPvgsaE"
+const fs = require('fs')
 
-client.login(bot_secret_token)
+fs.readFile('token.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
+    client.login(data)
+}) 
+

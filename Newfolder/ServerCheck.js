@@ -8,5 +8,8 @@ client.on('ready', () => {
         console.log(" - " + guild.name)
     })
 })
+fs.readFile('token.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
+    client.login(data)
+}) 
 
-client.login("NjgxMDI4MTc4Njg4NzM3MzQw.XoQvAg.Y4j2_MHn99vu3HZTIDbAQPvgsaE") // Replace XXXXX with your bot token

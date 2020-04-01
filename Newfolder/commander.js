@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-
+//checks with the server to see if any new messages are commands
 client.on('message', (receivedMessage) => {
     if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
         return
@@ -11,9 +11,10 @@ client.on('message', (receivedMessage) => {
     }
     
 })
-
+//trims the command to use for arguements. useful for charlamagne, not as useful for me
+//Currently only making note of what was said to use in the default
 function processCommand(receivedMessage) {
-    //let fullCommand = receivedMessage.content.substr(1) // Remove the leading exclamation mark
+    //let fullCommand = receivedMessage.content.substr(1) // Remove the leading slash mark
     //let splitCommand = fullCommand.split(" ") // Split the message up in to pieces for each space
     //let primaryCommand = splitCommand[0] // The first word directly after the exclamation is the command
     let primaryCommand = receivedMessage.content.substr(1) //Does everything but ignores spaces now
@@ -21,7 +22,7 @@ function processCommand(receivedMessage) {
 
     console.log("Command received: " + primaryCommand)
     
-    
+    //Main flow control. Calls the appropriate function with the correct command string
     if (primaryCommand == "makeone") {
         helpCommand(arguments, receivedMessage)
     } else if (primaryCommand == "deadassRN") {
@@ -44,7 +45,7 @@ function processCommand(receivedMessage) {
         aboutCommand(receivedMessage)
     }
 
-
+    //Default flow control. All strings not matching end up here.
     else {
         if (primaryCommand == "blade barrage") {
             receivedMessage.channel.send('Try golden gun next time!', {
@@ -109,5 +110,10 @@ function eightBallCommand(receivedMessage) {
 function aboutCommand(receivedMessage) {
     receivedMessage.channel.send('Developed by William Hueston. Open Source and available at: https://github.com/wjhueston/DiscordBot/blob/master/Newfolder/commander.js')
 }
+const fs = require('fs')
 
-client.login("NjgxMDI4MTc4Njg4NzM3MzQw.XoQvAg.Y4j2_MHn99vu3HZTIDbAQPvgsaE") // Replace XXXXX with your bot token
+fs.readFile('token.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
+    client.login(data)
+}) 
+
