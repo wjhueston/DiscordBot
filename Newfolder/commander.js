@@ -38,15 +38,20 @@ function processCommand(receivedMessage) {
         daysCommand(receivedMessage)
     } else if (primaryCommand == "rona") {
         ronaCommand(receivedMessage)
-    } else if (primaryCommand == "apoeightball") {eightBallCommand(receivedMessage)}
+    } else if (primaryCommand == "apoeightball") {
+        eightBallCommand(receivedMessage)
+    } else if (primaryCommand == "about") {
+        aboutCommand(receivedMessage)
+    }
+
 
     else {
-        if (receivedMessage == "blade barrage") {
+        if (primaryCommand == "blade barrage") {
             receivedMessage.channel.send('Try golden gun next time!', {
                 files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']
             })
         }
-        else if (receivedMessage == "nova bomb") {
+        else if (primaryCommand == "nova bomb") {
             receivedMessage.channel.send('Apo mains Nova Bomb, and he\'s great!', {
                 files: ['https://cdn.discordapp.com/attachments/482033731956113412/694241486522417162/image0.gif']
             })
